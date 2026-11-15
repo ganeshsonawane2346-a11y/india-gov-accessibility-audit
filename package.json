@@ -1,0 +1,21 @@
+{
+  "name": "india-gov-accessibility-audit",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "test": "npm run test -w server && npm run test -w client",
+    "test:e2e": "playwright test",
+    "lint": "eslint client/src server/src"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.1"
+  }
+}
